@@ -1,3 +1,4 @@
+:data-transition-duration: 300
 :title: Introducción a Git
 :venue: 8vas Jornadas de Software Libre de la UNNOBA
 :author: Martín Gaitán
@@ -11,7 +12,7 @@ Introducción a
 .. image:: img/Git.png
 
 
-Martín Gaitán / `@tin_nqn_ <http://twitter.com/tin_nqn_>`_ / #8JSL / CC-by-sa
+Gastón Avila / `@AvilaGas <http://twitter.com/AvilaGas>`_ / CC-by-sa
 
 --------
 
@@ -20,14 +21,12 @@ Martín Gaitán / `@tin_nqn_ <http://twitter.com/tin_nqn_>`_ / #8JSL / CC-by-sa
 Quién soy
 ---------
 
-- Compañero de Nati, Zamba y Minou
-- Hincha de Boca y del dulce de leche
-- Ingeniero en Computación (UNC)
-- Emprendedor (@Phasety)
-- Pythonista desde 2007
+- Dr. en Física
+- Activista en OpenDataCordoba
+- Albañil del software, Python, Javascript
 - ¿Git? Más que experto, ex-principiante
 
-gaitan@gmail.com - http://mgaitan.github.io
+avila.gas@gmail.com
 
 -----------
 
@@ -216,6 +215,34 @@ Instalación
 :data-rotate: 90
 :data-y: r1400
 
+
+Configuración
+-------------
+
+Quién sos
+
+.. code:: bash
+
+    $ git status
+    On branch master
+
+    Initial commit
+
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+
+        thesis.tex
+
+    nothing added to commit but untracked files present (use "git add" to track)
+
+
+Tu editor
+
+.. code:: bash
+
+    git config --global core.editor vim
+
+--------
 
 Configuración
 -------------
