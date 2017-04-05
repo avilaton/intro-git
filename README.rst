@@ -13,5 +13,5 @@ Para generar la presentación
 Utiliza `hovercraft <http://hovercraft.readthedocs.org/>`_ ::
 
     $ pip-3.3 install hovercraft
-    $ hovercraft slides.rst html
+    $ hovercraft -c slides.css slides.rst html
     $ firefox html/index.html
