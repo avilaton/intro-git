@@ -14,6 +14,8 @@ Introducción a
 
 Gastón Avila / `@AvilaGas <http://twitter.com/AvilaGas>`_ / CC-by-sa
 
+(Mayoritariamente trabajo de Martín Gaitán)
+
 --------
 
 :data-reveal: 1
@@ -21,10 +23,10 @@ Gastón Avila / `@AvilaGas <http://twitter.com/AvilaGas>`_ / CC-by-sa
 Quién soy
 ---------
 
-- Dr. en Física
-- Activista en OpenDataCordoba
-- Albañil del software, Python, Javascript
-- ¿Git? Más que experto, ex-principiante
+- Dr. en Física, gravitación clásica, datos iniciales,
+- Albañil del software, Python, Javascript,
+- Activista en OpenDataCordoba,
+- ¿Git? ex-principiante.
 
 avila.gas@gmail.com
 
