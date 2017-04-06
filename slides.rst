@@ -225,6 +225,74 @@ Quién sos
 
 .. code:: bash
 
+    git config --global user.name "Gastón Avila"
+    git config --global user.email avila.gas@gmail.com
+
+
+Tu editor
+
+.. code:: bash
+
+    git config --global core.editor nano
+
+--------
+
+
+Escribamos un paper
+--------------------
+
+.. code:: bash
+
+    $ mkdir un-paper
+    $ cd un-paper
+    $ git init
+    Initialized empty Git repository in /home/gavila/un-paper/.git/
+
+--------
+
+Que estoy haciendo?
+--------------------
+
+.. code:: bash
+
+    $ git status
+    On branch master
+
+    Initial commit
+
+    nothing to commit (create/copy files and use "git add" to track)
+
+--------
+
+
+
+Ahora escribo
+-------------
+
+.. code:: bash
+
+    $ nano readme.md
+    $ cat readme.md
+    Introducción a Git
+    ==================
+
+    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos
+    de texto.
+    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde
+    el año 1500, cuando un impresor (N. del T. persona que se dedica a la
+    imprenta) desconocido usó una galería de textos y los mezcló de tal
+    manera que logró hacer un libro de textos especimen. No sólo sobrevivió
+    500 años, sino que tambien ingresó como texto de relleno en documentos
+    electrónicos, quedando esencialmente igual al original.
+
+--------
+
+
+Donde estoy?
+-------------
+
+.. code:: bash
+
     $ git status
     On branch master
 
@@ -233,103 +301,133 @@ Quién sos
     Untracked files:
       (use "git add <file>..." to include in what will be committed)
 
-        thesis.tex
+        readme.md
 
     nothing added to commit but untracked files present (use "git add" to track)
 
+--------
 
-Tu editor
+
+Agregar al stage
+--------------------
 
 .. code:: bash
 
-    git config --global core.editor vim
+    $ git add readme.md
+    $ git status
+    On branch master
+
+    Initial commit
+
+    Changes to be committed:
+      (use "git rm --cached <file>..." to unstage)
+
+    	new file:   readme.md
 
 --------
 
-Configuración
--------------
-
-Quién sos
+Commit!
+--------------------
 
 .. code:: bash
 
-    git config --global user.name "Martín Gaitán"
-    git config --global user.email gaitan@gmail.com
-
-
-Tu editor
-
-.. code:: bash
-
-    git config --global core.editor vim
+    $ git commit -m "Crear primer párrafo"
+    $ git status
+    [master (root-commit) 0d0f711] Crear primer commit
+     1 file changed, 11 insertions(+)
+     create mode 100644 readme.md
 
 --------
 
-Empezando
-----------
 
-Crear un repo local
-
-.. code:: bash
-
-    git init
-
-Luego se pueden declarar repos remotos
+Que hice?
+--------------------
 
 .. code:: bash
 
-    git remote add origin https://github.com/mgaitan/intro-git.git
+    $ git log
 
-O directamente clonar un repositorio
+    commit 0d0f711aa32c21b0ac790c638463e540f02a6f78
+    Author: Gaston Avila <avila.gas@gmail.com>
+    Date:   Wed Apr 5 23:36:49 2017 -0300
 
-.. code:: bash
-
-    git clone https://github.com/mgaitan/intro-git.git .
+        Crear primer commit
 
 --------
 
-Creando *commits*
-------------------
 
-Cambios específicos
-
-.. code:: bash
-
-    git add README.txt
-    git commit -m 'Contenido básico en el README'
-
-O todos los cambios en archivos *trackeados*
+Agregar varios archivos
+------------------------
 
 .. code:: bash
 
-    git commit -am "El reactor nuclear funciona.
-    >    Faltan tests del disparador"
+    $ git status
+    On branch master
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+
+    	bibtex.tex
+    	imagenes/
+
+    nothing added to commit but untracked files present (use "git add" to track)
 
 ---------
 
-¿Dónde estoy?
---------------
-
-La brújula
+Agregar varios archivos
+------------------------
 
 .. code:: bash
 
-    git status
+    $ git add .
+    $ git status
+    On branch master
+    Changes to be committed:
+      (use "git reset HEAD <file>..." to unstage)
 
-El libro de viaje
-
-.. code:: bash
-
-    git log
-
-GUIs
-
-.. code:: bash
-
-    gitk / gitg / tig / qgit
+    	new file:   bibtex.tex
+    	new file:   imagenes/Git.png
+    	new file:   imagenes/dropbox.jpg
 
 
 ---------
+
+
+Commit de varios archivos
+---------------------------
+
+.. code:: bash
+
+    $ git commit -m 'Imágenes y bibtex.tex'
+    [master 542f7e2] Imágenes y bibtex.tex
+     3 files changed, 0 insertions(+), 0 deletions(-)
+     create mode 100644 bibtex.tex
+     create mode 100644 imagenes/Git.png
+     create mode 100644 imagenes/dropbox.jpg
+
+---------
+
+
+Como vamos?
+------------------------
+
+.. code:: bash
+
+    $ git log
+
+    commit 542f7e203d3f68d41c8c98fff2a6dea27130bbaa
+    Author: Gaston Avila <avila.gas@gmail.com>
+    Date:   Wed Apr 5 23:57:15 2017 -0300
+
+        Imágenes y bibtex.tex
+
+    commit 0d0f711aa32c21b0ac790c638463e540f02a6f78
+    Author: Gaston Avila <avila.gas@gmail.com>
+    Date:   Wed Apr 5 23:36:49 2017 -0300
+
+        Crear primer commit
+
+---------
+
 
 Deshaciendo
 -------------
@@ -339,14 +437,7 @@ Corregir el último commit
 
 .. code:: bash
 
-    git commit --amend
-
-Quitar del *stage*
-
-.. code:: bash
-
-    git reset HEAD file.py  # o bien
-    git rm --cached file.py
+    $ git commit --amend
 
 Restaurar archivo
 
@@ -361,8 +452,8 @@ Revertir commit
 
     git revert 1776f5
 
-
 --------
+
 
 Borrando
 ---------
@@ -380,6 +471,7 @@ Dejar de *trackear*:
     git rm file.py
 
 ------------
+
 
 ¿Qué cambié?
 ------------
@@ -441,6 +533,24 @@ No queremos control de **todo**
 :data-y: r1400
 
 
+Remotos
+----------
+
+Luego se pueden declarar repos remotos
+
+.. code:: bash
+
+    git remote add origin https://github.com/mgaitan/intro-git.git
+
+O directamente clonar un repositorio
+
+.. code:: bash
+
+    git clone https://github.com/mgaitan/intro-git.git .
+
+--------
+
+
 Repos remotos
 --------------
 
@@ -466,7 +576,7 @@ Sin default
 
 .. code:: bash
 
-   git push <remote> <rbranch>
+   $ git push <remote> <rbranch>
 
 O definimos default remoto para la rama actual
 
@@ -737,4 +847,3 @@ Preguntas?
     https://speakerdeck.com/schacon/introduction-to-git
     http://www.slideshare.net/mickaeltr/git-github-leverage-your-open-source-projects
     http://www.slideshare.net/anildigital/git-introduction
-
