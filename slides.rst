@@ -823,7 +823,8 @@ Más info / práctica
 - Git magic
 - Githug
 - Github help
-- Esta charla: http://github.com/mgaitan/intro-git
+- Esta charla: http://github.com/avilaton/intro-git
+- Basado en: http://github.com/mgaitan/intro-git
 
 
 ---------
