@@ -476,11 +476,32 @@ Dejar de *trackear*:
 ¿Qué cambié?
 ------------
 
-Cambios locales
-
 .. code:: bash
 
-    git diff
+    $ git diff
+
+    diff --git a/readme.md b/readme.md
+    index c1a4618..cbdc480 100644
+    --- a/readme.md
+    +++ b/readme.md
+    @@ -4,8 +4,10 @@ Introducción a Git
+     Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos
+     de texto.
+     Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde
+    -el año 1500, cuando un impresor (N. del T. persona que se dedica a la
+    +el año 1500, cuando un impresor (N. del T. tipo que se dedica a la
+     imprenta) desconocido usó una galería de textos y los mezcló de tal
+     manera que logró hacer un libro de textos especimen. No sólo sobrevivió
+     500 años, sino que tambien ingresó como texto de relleno en documentos
+     electrónicos, quedando esencialmente igual al original.
+    +
+    +Además esto debía tratarse de git, quizá deba incluir más texto robado.
+
+------------
+
+
+¿Qué cambié?
+------------
 
 Cambios en stage
 
@@ -533,107 +554,8 @@ No queremos control de **todo**
 :data-y: r1400
 
 
-Remotos
-----------
-
-Luego se pueden declarar repos remotos
-
-.. code:: bash
-
-    git remote add origin https://github.com/mgaitan/intro-git.git
-
-O directamente clonar un repositorio
-
-.. code:: bash
-
-    git clone https://github.com/mgaitan/intro-git.git .
-
---------
-
-
-Repos remotos
---------------
-
-- Son técnicamente iguales a nuestra copia de trabajo
-- Pueden ser locales o remotos (ssh, https, etc.)
-
-.. code:: bash
-
-    $ git remote -v
-    origin git://github.com/mgaitan/intro-git.git (fetch)
-    origin git://github.com/mgaitan/intro-git.git (push)
-
--------
-
-:data-rotate: 90
-:data-x: r-1400
-
-
-Empujando al remoto
--------------------
-
-Sin default
-
-.. code:: bash
-
-   $ git push <remote> <rbranch>
-
-O definimos default remoto para la rama actual
-
-.. code:: bash
-
-    git push -u <remote> <rbranch>
-
-Y luego
-
-.. code:: bash
-
-    git push
-
--------
-
-:data-rotate: 90
-:data-y: r1400
-
-
-Traeme lo nuevo (pull)
------------------------
-
-
-.. code:: bash
-
-    git pull [<remote> <rbranch>]
-
-``pull == fetch + merge``
-
----------------
-
-Crear tags
------------
-
-Ponerle "nombre" a una revisión.
-
-.. code:: bash
-
-    git tag v0.1.0
-
-Los tags son locales, pero se pueden pushear
-
-.. code:: bash
-
-    git push --tags
-
+Ramas (Branches)
 ----------------
-
-Ramas
-------
-
-.. epigraph::
-
-    De rama en rama se ve aquel amor que juraba
-    que no me habría de olvidar
-
-    -- Los Tigres del Norte, *De rama en rama*
 
 - Cambio de contexto indoloro (locales y rápidos)
 - Son *punteros móviles* a un commit
@@ -785,6 +707,94 @@ Listo, dónde subo mi código?
 
 ---------
 
+
+Remotos
+----------
+
+Luego se pueden declarar repos remotos
+
+.. code:: bash
+
+    git remote add origin https://github.com/avilaton/un-paper.git
+
+O directamente clonar un repositorio
+
+.. code:: bash
+
+    git clone https://github.com/avilaton/un-paper.git .
+
+Son técnicamente iguales a nuestra copia de trabajo.
+Pueden ser locales o remotos (ssh, https, etc.)
+
+.. code:: bash
+
+    $ git remote -v
+    origin git://github.com/avilaton/un-paper.git (fetch)
+    origin git://github.com/avilaton/un-paper.git (push)
+
+-------
+
+:data-rotate: 90
+:data-x: r-1400
+
+
+Empujando al remoto
+-------------------
+
+Sin default
+
+.. code:: bash
+
+   $ git push <remote> <rbranch>
+
+O definimos default remoto para la rama actual
+
+.. code:: bash
+
+    git push -u <remote> <rbranch>
+
+Y luego
+
+.. code:: bash
+
+    git push
+
+-------
+
+:data-rotate: 90
+:data-y: r1400
+
+
+Traeme lo nuevo (pull)
+-----------------------
+
+
+.. code:: bash
+
+    git pull [<remote> <rbranch>]
+
+``pull == fetch + merge``
+
+---------------
+
+Crear tags
+-----------
+
+Ponerle "nombre" a una revisión.
+
+.. code:: bash
+
+    git tag v0.1.0
+
+Los tags son locales, pero se pueden pushear
+
+.. code:: bash
+
+    git push --tags
+
+----------------
+
+
 :data-rotate: 90
 :data-x: r-1400
 
@@ -797,10 +807,6 @@ Github
 - ¡Colaborar con OSS nunca fue tan fácil!
 - Gestión de proyectos / comunicación / revisión / etc.
 - Enterarse de tendencias y aprender de cracks
-
-.. epigraph::
-
-    Código mata curriculum
 
 
 -------
